@@ -1,5 +1,4 @@
 #!/bin/bash
-# Armin Schlegel, armin.schlegel@gmx.de
 
 usage() { (
 	printf "`basename $0` rotates between two defined keyboard layouts on every call of the script\n"
@@ -23,7 +22,7 @@ if [ "$1" == "--help" ]; then
     exit 0
 fi
 
-
+touch /tmp/xkblayout
 LAYOUTS=("$@")
 
 CURRENT=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')
