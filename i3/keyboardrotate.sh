@@ -22,7 +22,6 @@ if [ "$1" == "--help" ]; then
     exit 0
 fi
 
-touch /tmp/xkblayout
 LAYOUTS=("$@")
 
 CURRENT=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')

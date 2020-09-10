@@ -15,13 +15,14 @@ set $strg control
 
 #exec --no-startup-id arandr ~/.screenlayout/default.sh
 exec --no-startup-id enpass
-exec --no-startup-id volumeicon
-exec --no-startup-id blueman-applet
 exec --no-startup-id linphone
-exec --no-startup-id xfce4-terminal
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id feh --bg-center Downloads/Black_light_bulbs_black_background_2560x1600.jpg 
+exec --no-startup-id xfce4-power-manager
+exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id volumeicon
+exec_always --no-startup-id echo us > /tmp/xkblayout
 
 # commands
 bindsym $alt+F2 exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
