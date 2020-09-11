@@ -17,7 +17,6 @@ set $strg control
 exec --no-startup-id enpass
 exec --no-startup-id linphone
 exec --no-startup-id feh --bg-center Downloads/Black_light_bulbs_black_background_2560x1600.jpg 
-exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id nm-applet
@@ -25,7 +24,7 @@ exec_always --no-startup-id volumeicon
 exec_always --no-startup-id echo us > /tmp/xkblayout
 
 # commands
-bindsym $alt+F2 exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+#bindsym $alt+F2 exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -71,29 +70,19 @@ bindsym $mod+Shift+q kill
 bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $alt+F2 exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+Shift+l focus up
-bindsym $mod+Shift+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left focus left
 bindsym $mod+Shift+Down focus down
 bindsym $mod+Shift+Up focus up
 bindsym $mod+Shift+Right focus right
 
-# move focused window
-bindsym $mod+j move left
-bindsym $mod+k move down
-bindsym $mod+l move up
-bindsym $mod+semicolon move right
-
-# alternatively, you can use the cursor keys:
+# move window
 bindsym $mod+Left move left
 bindsym $mod+Down move down
 bindsym $mod+Up move up
@@ -278,7 +267,7 @@ bar {
 }
 
 # Lock screen
-bindsym $alt+l exec --no-startup-id i3lock-fancy
+bindsym $mod+l exec --no-startup-id i3lock-fancy
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
