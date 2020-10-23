@@ -1,3 +1,4 @@
 #!/bin/bash
-
-cp ~/.config/i3/* i3/
+mkdir -p .config/i3
+cp ~/.config/i3/* .config/i3/
+cp ~/.Xmodmap .
