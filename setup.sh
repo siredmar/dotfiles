@@ -18,4 +18,5 @@ sudo make install
 mkdir -p .config/i3
 cp -rv .dotfiles/.config/i3/* ~/.config/i3/
 cp .dotfiles/.Xmodmap ~/
+cp .dotfiles/.gtkrc-2.0 ~/
 echo "enter in .zshrc: plugins=(git zsh-autosuggestions history-search-multi-word)"
