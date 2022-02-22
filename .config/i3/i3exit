@@ -8,10 +8,10 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-        sudo pm-suspend | i3lock -c 000000
+        sudo systemctl suspend | i3lock -c 000000
         ;;
     hibernate)
-        sudo pm-hibernate
+        sudo systemctl hibernate
         ;;
     reboot)
         sudo reboot

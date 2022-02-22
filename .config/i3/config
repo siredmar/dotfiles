@@ -62,7 +62,7 @@ bindsym $mod+Shift+k focus down
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $strg+b exec i3-sensible-terminal
 bindsym $mod+t exec thunar
-bindsym $mod+b exec chromium-browser
+bindsym $mod+b exec vivaldi
 bindsym $mod+c exec code
 
 # kill focused window
@@ -186,10 +186,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -271,13 +271,29 @@ bindsym $mod+l exec --no-startup-id i3lock-fancy
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused #d70a53 #d70a53 #ffffff #8c0333
-  client.focused_inactive #333333 #333333 #888888 #333333
-  client.unfocused #333333 #333333 #888888 #333333
-  client.urgent #eb709b #eb709b #ffffff #eb709b
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  #client.focused #d70a53 #d70a53 #ffffff #8c0333
+  ##client.focused_inactive #333333 #333333 #888888 #333333
+  ##client.unfocused #333333 #333333 #888888 #333333
+  ##client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+  #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+  #client.unfocused        #333333 #222222 #888888 #292d2e   #ffffff 
+  #client.urgent #eb709b #eb709b #ffffff #eb709b
+  #client.placeholder      #000000 #0c0c0c #ffffff #000000 
+set $primary #ffe100
+set $urgent_text #00ff12
+set $urgent_backgr #ff0000
+set $secondary #000000
+set $border #c78b10
+set $indicator #85c710
+# class                 border       backgr. text indicator child_border
+client.focused          $border     $primary     $secondary  $primary       $border
+client.focused_inactive $border     $secondary     $primary  $indicator      $border
+client.unfocused        $border     $secondary    $primary  $indicator       $border
+client.urgent           $border     $urgent_backgr     $secondary  $text       $border
+client.placeholder      $border     $primary     $secondary  $primary       $border
 
-  client.background       #2B2C2B
+#  client.background       #2B2C2B
+  client.background       #ffffff
 
 
 #############################
